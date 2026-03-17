@@ -1,42 +1,44 @@
-📄 README – Πτυχιακή Εργασία: Αυτόματη Αναγνώριση Προσώπου με Χρήση Υπολογιστικής Όρασης
+# BSc Thesis: Automatic Face Recognition using Computer Vision
 
-Αρχεία:
+This repository contains the code and dataset for my BSc thesis. The project focuses on building a facial recognition system using Neural Networks and Computer Vision techniques.
+
+Repository Files:
 -------
 
 1. dataset.csv
-   - Περιέχει 300 συνθετικές εγγραφές (100 για κάθε ταυτότητα)
-   - Κάθε εγγραφή έχει 128 αριθμητικά χαρακτηριστικά (όπως embeddings προσώπου)
-   - Στήλη "ταυτότητα": ['Άτομο_1', 'Άτομο_2', 'Άτομο_3']
+   - Contains 300 synthetic records (100 for each identity)
+   - Each record consists of 128 numerical features, structured to simulate real facial embeddings.
+   - Target column: 'Identity' (Classes: 'Person_1', 'Person_2', 'Person_3')
 
 2. recognition.py
-   - Εκπαιδεύει πολυεπίπεδο νευρωνικό δίκτυο (MLP) για πρόβλεψη ταυτότητας
-   - Περιλαμβάνει:
-     • preprocessing
-     • κανονικοποίηση χαρακτηριστικών
-     • train/test split με stratification
-     • one-hot encoding για multiclass
-     • αξιολόγηση με ακρίβεια και classification report
-   - Χρησιμοποιεί τις βιβλιοθήκες: pandas, scikit-learn, tensorflow/keras
-   - Το μοντέλο πετυχαίνει ακρίβεια: 100% στο test set
+   - Trains a Multi-Layer Perceptron (MLP) neural network to predict identities
+   - The pipeline includes:
+     • Data preprocessing
+     • Feature normalization
+     • Stratified train/test split
+     • Multiclass one-hot encoding
+     • Accurate evaluation and classification report
+   - Tech Stack: 'pandas', 'scikit-learn', 'tensorflow'/'keras'
+   - Achieves 100% accuracy on the test set
 
-Οδηγίες Εκτέλεσης:
+How to Run:
 ------------------
 
-Προαπαιτούμενα:
+Prerequisites:
 - Python 3.8+
-- Εγκατεστημένα packages:
+- Install the required packages:
   pip install pandas scikit-learn tensorflow
 
-Εκτέλεση:
+Run:
 ---------
-Ανοίξτε το terminal και τρέξτε:
+Open the terminal and run:
 > python recognition.py
 
-Έξοδος:
+Output:
 -------
-- Εμφανίζεται η ακρίβεια ταξινόμησης (accuracy)
-- Εμφανίζεται το classification report (precision, recall, f1-score)
+- Displays the classification accuracy
+- Displays the detailed classification report (precision, recall, f1-score)
 
-Σημείωση:
+Note:
 ---------
-Το dataset είναι συνθετικό, αλλά δομημένο σαν embeddings που θα παρήγαγε πραγματικό σύστημα αναγνώρισης προσώπων (FaceNet, Dlib κ.ά.).
+The dataset is synthetic, but it is structured to simulate the embeddings that would be produced by a real-world facial recognition system (e.g., FaceNet, Dlib)
